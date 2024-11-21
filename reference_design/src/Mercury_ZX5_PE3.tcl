@@ -1,5 +1,5 @@
-# ----------------------------------------------------------------------------------
-# Copyright (c) 2022 by Enclustra GmbH, Switzerland.
+# ----------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 by Enclustra GmbH, Switzerland.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this hardware, software, firmware, and associated documentation files (the
@@ -17,8 +17,10 @@
 # HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # PRODUCT OR THE USE OR OTHER DEALINGS IN THE PRODUCT.
-# ----------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 
+set_property CFGBVS VCCO [current_design]
+set_property CONFIG_VOLTAGE 2.5 [current_design]
 set_property BITSTREAM.CONFIG.OVERTEMPPOWERDOWN ENABLE [current_design]
  
 # ----------------------------------------------------------------------------------
@@ -168,6 +170,22 @@ set_property -dict {PACKAGE_PIN AB14  IOSTANDARD LVCMOS25  } [get_ports {I2C_USE
 set_property -dict {PACKAGE_PIN H5    IOSTANDARD LVCMOS18  } [get_ports {FPGA_LED0_N}]
 
 # MGT Group 0
+# set_property PACKAGE_PIN AA3   [get_ports {MGT_TX0_P}] # GTP
+# set_property PACKAGE_PIN AB3   [get_ports {MGT_TX0_N}] # GTP
+# set_property PACKAGE_PIN W4    [get_ports {MGT_TX1_P}] # GTP
+# set_property PACKAGE_PIN Y4    [get_ports {MGT_TX1_N}] # GTP
+# set_property PACKAGE_PIN AA5   [get_ports {MGT_TX2_P}] # GTP
+# set_property PACKAGE_PIN AB5   [get_ports {MGT_TX2_N}] # GTP
+# set_property PACKAGE_PIN W2    [get_ports {MGT_TX3_P}] # GTP
+# set_property PACKAGE_PIN Y2    [get_ports {MGT_TX3_N}] # GTP
+# set_property PACKAGE_PIN AA7   [get_ports {MGT_RX0_P}] # GTP
+# set_property PACKAGE_PIN AB7   [get_ports {MGT_RX0_N}] # GTP
+# set_property PACKAGE_PIN W8    [get_ports {MGT_RX1_P}] # GTP
+# set_property PACKAGE_PIN Y8    [get_ports {MGT_RX1_N}] # GTP
+# set_property PACKAGE_PIN AA9   [get_ports {MGT_RX2_P}] # GTP
+# set_property PACKAGE_PIN AB9   [get_ports {MGT_RX2_N}] # GTP
+# set_property PACKAGE_PIN W6    [get_ports {MGT_RX3_P}] # GTP
+# set_property PACKAGE_PIN Y6    [get_ports {MGT_RX3_N}] # GTP
 
 # MGT Group 1
 set_property -dict {PACKAGE_PIN R5    IOSTANDARD LVCMOS18  } [get_ports {MGT_TX4_P}]
@@ -188,6 +206,8 @@ set_property -dict {PACKAGE_PIN G4    IOSTANDARD LVCMOS18  } [get_ports {MGT_RX7
 set_property -dict {PACKAGE_PIN F4    IOSTANDARD LVCMOS18  } [get_ports {MGT_RX7_N}]
 
 # Clock Generator MGT RefClk0
+# set_property PACKAGE_PIN V9    [get_ports {MGT_REFCLK0_N}] # GTP
+# set_property PACKAGE_PIN U9    [get_ports {MGT_REFCLK0_P}] # GTP
 
 # Clock Generator MGT RefClk1
 set_property -dict {PACKAGE_PIN N5    IOSTANDARD LVCMOS18  } [get_ports {MGT_REFCLK1_N}]
@@ -198,6 +218,8 @@ set_property -dict {PACKAGE_PIN H3    IOSTANDARD LVCMOS18  } [get_ports {MGT_REF
 set_property -dict {PACKAGE_PIN H4    IOSTANDARD LVCMOS18  } [get_ports {MGT_REFCLK2_P}]
 
 # Clock Generator MGT RefClk3
+# set_property PACKAGE_PIN V5    [get_ports {MGT_REFCLK3_N}] # GTP
+# set_property PACKAGE_PIN U5    [get_ports {MGT_REFCLK3_P}] # GTP
 
 # Oscillator 100 MHz
 set_property -dict {PACKAGE_PIN Y17   IOSTANDARD LVCMOS25  } [get_ports {CALIB_CLK}]
